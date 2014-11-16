@@ -14,5 +14,9 @@
 
 <p>I will appreciate every kind of constructive feedback and criticism. Moreover I would like to encourage everyone to use the data in order to replicate my results or to conduct their own analyses.</p>
 
+<p>Repository structure</p>
+* ANALIZA - the main folder
+	* Dane - here the data is stored
+
 <p>Contact e-mail:</p>
 * sztal111@gmail.com
