@@ -17,6 +17,7 @@
 <p>Repository structure</p>
 * ANALIZA - the main folder
 	* Dane - here the data is stored
+	* packrat - directory where project related R pakckages are stored (not important from the point of view of the research)
 
 <p>Contact e-mail:</p>
 * sztal111@gmail.com
