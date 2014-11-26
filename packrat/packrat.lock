@@ -34,10 +34,22 @@ Source: CRAN
 Version: 1.0.1
 Hash: 576e5bf21e3801499cebc27af6ad1627
 
+Package: mokken
+Source: CRAN
+Version: 2.7.7
+Hash: c6b0bba67a23a47c3ac9f1664da5cbdb
+Requires: poLCA
+
 Package: packrat
 Source: CRAN
 Version: 0.4.1-1
 Hash: 5716097644904b9c1b4be2692de16005
+
+Package: poLCA
+Source: CRAN
+Version: 1.4.1
+Hash: e9436db78cdd6d35fcf7a92b3be1fdd5
+Requires: scatterplot3d
 
 Package: psych
 Source: CRAN
@@ -53,3 +65,8 @@ Package: Rcpp
 Source: CRAN
 Version: 0.11.3
 Hash: d9cc0a13885961b2d004cf73b0fb68dd
+
+Package: scatterplot3d
+Source: CRAN
+Version: 0.3-35
+Hash: 892237b096684f3be532ebc7e302e864
