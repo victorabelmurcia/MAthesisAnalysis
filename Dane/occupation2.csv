@@ -1,0 +1,179 @@
+id,occup,ISCO,occup2
+1,,NA,NA
+2,Prawnik,pro,high_serv
+3,"nauczyciel, tłumacz",pro,educ
+4,,NA,NA
+5,,NA,NA
+6,specjalista od marketingu internetowego,tech/assoc_pro,marketing/PR
+7,PR assistant,tech/assoc_pro,marketing/PR
+8,Copywriter,tech/assoc_pro,marketing/PR
+9,customer service,serv/sales,office/service
+10,,NA,NA
+11,lektorka w szkole językowej,pro,educ
+12,nauczyciel języka angielskiego,pro,educ
+13,nauczyciel,pro,educ
+14,koordynatorka projektów kulturalnych,pro,culture/NGO
+15,nauczyciel,pro,educ
+16,prowadzę firmę ,self_employ,self_employ
+17,nauczyciel,pro,educ
+18,Architekt Wnętrz,pro,art/design
+19,trener,NA,educ
+20,,NA,NA
+21,Barista/Barman,serv/sales,serv/sales
+22,Pracownik Fabryki,factory/machine_op,physical
+23,lekarz,pro,health
+24,junior account manager,pro,manager
+25,specjalista ds obslugi klienta,tech/assoc_pro,office/service
+26,lektor języka angielskiego,pro,educ
+27,Project manager,manager,manager
+28,marketing,pro,marketing/PR
+29,,NA,NA
+30,media planner buyer,pro,marketing/PR
+31,lektor,pro,educ
+32,media,pro,marketing/PR
+33,Konsultant BI,pro,high_serv
+34,"koordynator imprez, kierownik biura",pro,culture/NGO
+35,,NA,NA
+36,nauczyciel języka angielskiego,pro,educ
+37,,NA,NA
+38,konsultant ds. podrozy,pro,office/service
+39,,NA,NA
+40,analiza badań marketingowych,pro,analyst
+41,bankowiec,pro,finance
+42,niania,serv/sales,serv/sales
+43,Fotogrametra,tech/assoc_pro,tech
+44,specjalista ds.operacji finansowych,pro,finance
+45,barmanka,serv/sales,serv/sales
+46,dorywcza praca fizyczno-techniczna,factory/machine_op,physical
+47,,NA,NA
+48,specjalista ds. komunikacji online,pro,marketing/PR
+49,badacz,pro,analyst
+50,stażysta w firmie badawczej,tech/assoc_pro,analyst
+51,planista strategiczny,pro,manager
+52,account executive assistant,pro,manager
+53,specjalista ds. reklamy,pro,marketing/PR
+54,logopeda,pro,educ
+55,,NA,NA
+56,dziennikarz,pro,journal
+57,trener personalny,pro,educ
+58,specjalista ds. turystyki,pro,high_serv
+59,specjalosta do spraw marketingu,pro,marketing/PR
+60,,NA,NA
+61,,NA,NA
+62,promocja,serv/sales,marketing/PR
+63,ratownik - instruktor,pro,educ
+64,,NA,NA
+65,Administrator Nieruchomości,manager,manager
+66,,NA,NA
+67,,NA,NA
+68,trycholog,pro,health
+69,,NA,NA
+70,terapeuta cień dla osób z autyzmem,pro,health
+71,badacz ilościowy (badania marketingowe),pro,analyst
+72,badacz rynku,pro,analyst
+73,"freelancer, startup girl",pro,NA
+74,sekretarka,cler_sup,office/service
+75,"cukiernik, wlasna dzialalnosc",self_employ,self_employ
+76,Terapeuta wspomagający,pro,health
+77,asystentka koordynatora,tech/assoc_pro,office/service
+78,,NA,NA
+79,Manager,manager,manager
+80,psycholog,pro,health
+81,rekruter,pro,office/service
+82,trener,pro,educ
+83,,NA,NA
+84,,NA,NA
+85,,NA,NA
+86,,NA,NA
+87,,NA,NA
+88,,NA,NA
+89,żaden konkretny,NA,NA
+90,pracownik ngo,pro,culture/NGO
+91,,NA,NA
+92,badacz rynku,pro,analyst
+93,,NA,NA
+94,PM,NA,NA
+95,urzędnik,manager,office/service
+96,,NA,NA
+97,rzecznik patentowy,manager,office/service
+98,"projetkanta biżuterii, organizator eventów",pro,art/design
+99,,NA,NA
+100,,NA,NA
+101,,NA,NA
+102,Animator czasu wolnego,serv/sales,culture/NGO
+103,rejestratorka medyczna,cler_sup,office/service
+104,,NA,NA
+105,trener/ edukator,pro,educ
+106,pomocnik w fundacji prozwierzęcej,cler_sup,culture/NGO
+107,,NA,NA
+108,,NA,NA
+109,freelancer,pro,NA
+110,tłumacz,pro,high_serv
+111,Naukowiec,pro,science
+112,Specjalista,pro,high_serv
+113,Specjalista,pro,high_serv
+114,archeolog,pro,science
+115,frontend developer,pro,high_serv
+116,archeolog,pro,science
+117,,NA,NA
+118,,NA,NA
+119,recepcjonistka,cler_sup,office/service
+120,Specjalista ds marketingu,pro,marketing/PR
+121,"Content Quality Assurance (praca przez internet, trochę coś jak 'administrator')",tech/assoc_pro,office/service
+122,,NA,NA
+123,grafik,pro,art/design
+124,Informatyk,pro,high_serv
+125,"redaktor, copywriter",pro,journal
+126,,NA,NA
+127,pedagog,serv/sales,educ
+128,,NA,NA
+129,Stażysta w obszarze HR,tech/assoc_pro,office/service
+130,analityk w korporacji,pro,analyst
+131,media manager,pro,marketing/PR
+132,Customer and Shopper Marketing,pro,analyst
+133,grafik komputerowy,pro,art/design
+134,Redaktor,pro,journal
+135,,NA,NA
+136,Helpdesk,cler_sup,office/service
+137,Redaktor,pro,journal
+138,branża reklamowa,pro,marketing/PR
+139,wsparcie działu sprzedaży,tech/assoc_pro,serv/sales
+140,,NA,NA
+141,,NA,NA
+142,Specjalista ds. wsoarcia sprzedazy,pro,serv/sales
+143,strateg reklamowy,pro,marketing/PR
+144,Barman,serv/sales,serv/sales
+145,,NA,NA
+146,,NA,NA
+147,,NA,NA
+148,psycholog,pro,health
+149,profesjonalny barista,serv/sales,serv/sales
+150,,NA,NA
+151,,NA,NA
+152,,NA,NA
+153,,NA,NA
+154,praca biurowa,cler_sup,office/service
+155,,NA,NA
+156,specjalista ds. compliance,pro,high_serv
+157,,NA,NA
+158,,NA,NA
+159,przedstawiciel handlowy,serv/sales,serv/sales
+160,Nauczyciel akademicki,pro,science
+161,,NA,NA
+162,Pracownik Ochrony,serv/sales,physical
+163,,NA,NA
+164,,NA,NA
+165,,NA,NA
+166,obsluga klienta,serv/sales,serv/sales
+167,Księgowa,cler_sup,office/service
+168,,NA,NA
+169,,NA,NA
+170,,NA,NA
+171,asystentka księgowej,cler_sup,office/service
+172,,NA,NA
+173,asystent naukowy,pro,science
+174,Staż,cler_sup,office/service
+175,baristka,serv/sales,serv/sales
+176,,NA,NA
+177,analityk,pro,analyst
+178,,NA,NA
