@@ -303,10 +303,10 @@ for(i in 172:188) {print(all.equal(levels(D[,171]), levels(D[,i])))}
 D[,171:188] = varSetRecode(171:188, D, c(NA,2,4,3,1,5))
 
 ### Get rid of respondents that are either too old or do not live in Warsaw
-D = D[D$age<=35, ]
+D = D[D$age<=35 | is.na(D$age), ]
 D = D[D$Wwa == "yes", ]
 
 ### Save the date
-write.csv(D, file="Dane/DataInd218.csv")
+write.csv(D, file="Dane/DataInd218.csv", row.names=FALSE)
 
 # This is it folks!
