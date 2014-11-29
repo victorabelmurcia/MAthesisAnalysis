@@ -1,0 +1,132 @@
+<h1>Codebook</h1>
+<h3>for: DataLab202.csv</h3>
+
+<h3>Main info:</h3>
+<p>DataLab202.csv contains data on individual respondnts. Data on places that the respondents visit is stored separate files.</p>
+<p>The dataset is arranged according to the rules of tidy data, so every row is an observation and every columns is a variable.
+This is also the reason why data on places is stored elsewhere - according to the rules of tidy data each type of information
+should have its own dataset.</p>
+<p>The dataset contains various demographic and socio-economic variables. Moreover there is a lot of information on cultural
+preferences and habits as well as social/civic activity, social capital (operationalized according to the Resource Generator model)
+place attachment towards Warsaw.</p>
+
+<h4>Dimensions</h4>
+<ul>
+	<li>Rows (respondents): 202</li>
+	<li>Columns (variables): 193</li>
+</ul>
+
+<h2>Variables:</h2>
+<h4>id</h4>
+<p>Id number of the respodnent. Necessary for correct dataset merging.</p>
+<p></p>
+
+<h4>gender</h4>
+<p>Respondent's gender</p>
+<p>Values:</p>
+<ul>
+	<li>woman</li>
+	<li>man</li>
+</ul>
+
+<h4>birth</h4>
+<p>Date of birth</p>
+
+<h4>marital</h4>
+<p>Marital status</p>
+<p>Values:</p>
+<ul>
+	<li>single</li>
+	<li>nf_rel - non-formal stable relationship of any kind</li>
+	<li>married</li>
+</ul>
+
+<h4>Wwa</h4>
+<p>Living in Warsaw - it was used as a filtering variable</p>
+
+<h4>district</h4>
+<p>District of Warsaw in which a respondent lives</p>
+
+<h4>timeWwa</h4>
+<p>The amount of time a respondent has been living in Warsaw</p>
+
+<h4>children</h4>
+<p>Children (yes/no)</p>
+
+<h4>dog</h4>
+<p>Dog (yes/no)</p>
+
+<h4>edu</h4>
+<p>Respondent's education</p>
+<p>Values:</p>
+<ul>
+	<li>&lt=highschool+tech - education that equals or is lower than high school or technical school</li>
+	<li>BA - bachelor</li>
+	<li>MA+ - MA or higher</li>
+</ul>
+
+<h4>eduprog</h4>
+<p>My own classification of the type of education obtained by a respondent</p>
+<p>Values:</p>
+<ul>
+	<li>human/lang - humanities or language studies</li>
+	<li>law/biz/menag - law school, bussiness studies/economy/finance or menagement studies of various kinds (i.e. MBA)</li>
+	<li>leisure - leisure studies and related disciplines</li>
+	<li>STEM/med - STEM (Science, Technology, Engeneering, Math) or medical/biological science</li>
+	<li>soc/beh - social and behavioral sciences</li>
+</ul>
+
+<h4>edutime</h4>
+<p>Whether a respondent is attending a full-time educaton right now (yes/no)</p>
+
+<h4>work</h4>
+<p>Does a respondent currently have a job (yes/no)</p>
+
+<h4>worktime</h4>
+<p>Working hours</p>
+<p>Values:</p>
+<ul>
+	<li>no_job</li>
+	<li>part - part-time job</li>
+	<li>flexible - flexible not regulated working time</li>
+	<li>full - full-time job</li>
+</ul>
+
+<h4>occup</h4>
+<p>Type of occupation. This variable has many categories that are quite sparse. Thus the variable is rather useless</p>
+
+<h4>ISCO</h4>
+<p>Occupational classification loosely based on ISCO-08. Also very sparse and very useful</p>
+
+<h4>ISCObroad</h4>
+<p>Much more general and broad occupational classification drived from ISCO.</p>
+<p>Values:</p>
+<ul>
+	<li>low:psych/sale/serv/assoc_pro - lower tier jobs. Clerical, physcal, mid-level technicians, sales and service, interns, etc.</li>
+	<li>high:mng/pro/self - higher tier jobs. Managers, self-employment, professionals, high-skilled technicians, scientists etc.</li>
+</ul>
+
+<h4>fatheredu</h4>
+<p>Father education. The same value labels as in edu except for an addition of "I don't know".</p>
+
+<h4>motheredu</h4>
+<p>Mother education. The same value labels as in edu except for an addition of "I don't know"</p>
+
+<h4>grandedu</h4>
+<p>Education of the most educated grandparent. The same value labels as in edu except for an addition of "I don't know"</p>
+
+<h4>income</h4>
+<p>Monthly income in (x, x+1) thousands (pln). Bounded from above by 10, what means that 10 indicates 10+ thousands of income,
+so the scale looses reliability in the case of extreme observations. However, there are very few such observations in the dataset.</p>
+
+<h4>lifestd</h4>
+<p>Perceived standard of life. Quantitative description that ranges from 1 to 5.</p>
+
+<h4>cars</h4>
+<p>Number of a respondent's cars</p>
+<p>Values:</p>
+<ul>
+	<li>no_car</li>
+	<li>1car+ - one or more cars</li>
+</ul>
+
