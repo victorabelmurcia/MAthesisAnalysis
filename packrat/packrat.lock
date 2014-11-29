@@ -17,11 +17,6 @@ Source: CRAN
 Version: 1.54.0-5
 Hash: f6ec6d403596536b115f39d38204d571
 
-Package: BiocInstaller
-Source: Bioconductor
-Version: 1.16.1
-Hash: 8772a5d8d140f2083669934c97975ae6
-
 Package: DBI
 Source: CRAN
 Version: 0.3.1
@@ -42,6 +37,12 @@ Package: magrittr
 Source: CRAN
 Version: 1.5
 Hash: 38d492cf072bc9f3c73bda2aee3d0e23
+
+Package: mice
+Source: CRAN
+Version: 2.22
+Hash: dd10c4fba28cb6b1a0ad5e7cb013b1ac
+Requires: randomForest, Rcpp
 
 Package: mokken
 Source: CRAN
@@ -70,6 +71,11 @@ Source: CRAN
 Version: 2.0.1
 Hash: 9a3ac4e5fd8059af0fc5156bcb019bbc
 
+Package: randomForest
+Source: CRAN
+Version: 4.6-10
+Hash: 6cfc4af49262a122c8ff130048e60375
+
 Package: Rcpp
 Source: CRAN
 Version: 0.11.3
@@ -79,3 +85,8 @@ Package: scatterplot3d
 Source: CRAN
 Version: 0.3-35
 Hash: 892237b096684f3be532ebc7e302e864
+
+Package: tree
+Source: CRAN
+Version: 1.0-35
+Hash: 1be941fed7f7441ad0a50567b1e7fd78
