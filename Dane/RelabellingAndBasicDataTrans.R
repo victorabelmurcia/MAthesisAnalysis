@@ -200,6 +200,12 @@ levels(D$bookfreq) = c(NA,"often", "sometimes", "often", rep("rarely", 2))
 for(i in 61:69) {print(all.equal(levels(D[,60]), levels(D[,i])))}
 # Recode factor levels in book.a1 to book.a10
 D[,60:69] = varSetRecode(60:69, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
+b = as.character(D$book12)
+b = gsub("[0-9]*-", "", b)
+b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?()-.,]*", "", b)
+b = as.numeric(b)
+D$book12 = b
+rm("b")
 
 # Press related variables
 levels(D$pressfreq) = c(NA, "often", "sometimes", "often", rep("rarely", 2))
@@ -250,6 +256,7 @@ b = gsub("dziesi", "50", b)
 b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
 b = as.numeric(b)
 b = cut(b, c(-1,99,999,Inf), labels=c("tens", "hundreds", "thousands"))
+D$bookquant = b
 
 b = as.character(D$cdquant)
 b = gsub("[0-9]*-", "", b)
@@ -260,6 +267,7 @@ b = gsub("-", "0", b)
 b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
 b = as.numeric(b)
 b = cut(b, c(-1,19,99,Inf), labels=c("few", "tens", "hundreds"))
+D$cdquant = b
 
 b = as.character(D$artquant)
 b = gsub("[0-9]*-", "", b)
@@ -268,6 +276,8 @@ b = gsub("kilka", "5", b)
 b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
 b = as.numeric(b)
 b = cut(b, c(-1,0,10,Inf), labels=c("zero", "few", "tens+"))
+D$artquant = b
+rm("b")
 
 # Social/civic activity
 # Check if factor levels ordering for socact1. to socact14 are same
@@ -308,5 +318,6 @@ D = D[D$Wwa == "yes", ]
 
 ### Save the date
 write.csv(D, file="Dane/DataInd218.csv", row.names=FALSE)
+rm(list=ls())
 
 # This is it folks!
