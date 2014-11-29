@@ -268,3 +268,45 @@ b = gsub("kilka", "5", b)
 b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
 b = as.numeric(b)
 b = cut(b, c(-1,0,10,Inf), labels=c("zero", "few", "tens+"))
+
+# Social/civic activity
+# Check if factor levels ordering for socact1. to socact14 are same
+for(i in 119:131) {print(all.equal(levels(D[,118]), levels(D[,i])))}
+# Recode factor levels in socact1 to socact14
+D[,118:131] = varSetRecode(118:131, D, c(NA,0,1), numeric=TRUE)
+
+# Social capital - known persons (Resource Generator model)
+# Check if factor levels ordering for scknow. to scknow15 are same
+for(i in 133:146) {print(all.equal(levels(D[,132]), levels(D[,i])))}
+# Recode factor levels in scknow1 to scknow15
+D[,132:146] = varSetRecode(132:146, D, c(NA,0,1,2,4,3), numeric=TRUE)
+
+# Social capital - getting help (Resource Generator model)
+# Check if factor levels ordering for schelp1. to schelp15 are same
+for(i in 148:161) {print(all.equal(levels(D[,147]), levels(D[,i])))}
+# Recode factor levels in scknow1 to shelp12 and for schelp15
+D[,c(147:158, 161)] = varSetRecode(c(147:158, 161), D, c(NA,0,1,2,4,3), numeric=TRUE)
+# Recode factor levels in scknow13 and scknow14
+D[,159:160] = varSetRecode(159:160, D, c(NA,0,2,4,3), numeric=TRUE)
+
+# Place attachment towards Warsaw
+# General unidimensional scale of place attachment
+# Check if factor levels ordering for attgen1 to attgen9 are same
+for(i in 163:170) {print(all.equal(levels(D[,162]), levels(D[,i])))}
+# Recode factor levels in attgen1 to attgen9
+D[,162:170] = varSetRecode(162:170, D, c(NA,2,4,3,1,5), numeric=TRUE)
+
+# Multidimensional scale of place attachment
+# Check if factor levels ordering for attgen1 to attgen9 are same
+for(i in 172:188) {print(all.equal(levels(D[,171]), levels(D[,i])))}
+# Recode factor levels in attmult1 to attmult18
+D[,171:188] = varSetRecode(171:188, D, c(NA,2,4,3,1,5))
+
+### Get rid of respondents that are either too old or do not live in Warsaw
+D = D[D$age<=35, ]
+D = D[D$Wwa == "yes", ]
+
+### Save the date
+write.csv(D, file="Dane/DataInd.csv")
+
+# This is it folks!
