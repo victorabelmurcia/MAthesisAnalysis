@@ -1,0 +1,212 @@
+id,trainfav,trainfav2
+1,Biegam,run
+2,jogging,run
+3,pole dance,ind
+4,biegi,run
+5,"gimnastyka, pływanie, rower",ind
+6,jazda na rowerze i bieganie,ind
+7,bieganie,run
+8,Bieganie,run
+9,fitness,ind
+10,krykiet,group
+11,jogging,run
+12,jazda na rowerze,ind
+13,joga,ind
+14,jazdę na rowerze,ind
+15,pilates,ind
+16,"rower, aerobik",ind
+17,rower,ind
+18,"Joga, zumba",ind
+19,basen,ind
+20,bieganie,run
+21,fitness,ind
+22,siłownia,ind
+23,"gimnastyka, szermierka",fight
+24,trening siłowy,ind
+25,rower,ind
+26,szermierka,fight
+27,rower,ind
+28,bieganie,run
+29,rolki,ind
+30,"jazda na rowerze, fitnes",ind
+31,bieganie,run
+32,rower,ind
+33,Wspinaczkę,ind
+34,"spacery, bieganie, treningi",run
+35,"ćwiczenia w dom, rolki, taniec",ind
+36,joga,ind
+37,Pływanie,ind
+38,plywanie,ind
+39,ćwiczenia i rower,ind
+40,rower,ind
+41,,NA
+42,żaglarstwo,group
+43,fitness,ind
+44,siłownia,ind
+45,rower,ind
+46,piłka nożna,group
+47,fitness,ind
+48,bieganie,run
+49,ćwiczenia aerobowe,ind
+50,taniec,ind
+51,boks,fight
+52,pływanie,ind
+53,"jazda na rowerze, bieganie",ind
+54,fitness,ind
+55,Bieganie,run
+56,fitness,ind
+57,bieganie,run
+58,bieganie,run
+59,,NA
+60,aerobic,ind
+61,pilka nożna,group
+62,rower,ind
+63,"pływanie, crossfit, siłownia",ind
+64,psie zaprzęgi,ind
+65,"spacery, pływanie, rower",ind
+66,Fitnes,ind
+67,Joga,ind
+68,"rowerek, steper i trening siłowy",ind
+69,bieganie,run
+70,pilates,ind
+71,"bieganie, pilates, pływanie",ind
+72,pływanie,ind
+73,"bieganie, squash, gimnastyka",ind
+74,rower,ind
+75,ultimate frisbee,group
+76,Sporty walki,fight
+77,"bieganie, jazda rowerem",ind
+78,"siłownia, pole dance",ind
+79,Fitness,ind
+80,joga,ind
+81,"siłownia, zajęcia fitness w klubie",ind
+82,dlugie spacery/marsze,ind
+83,,NA
+84,pływanie,ind
+85,bieganie,run
+86,,NA
+87,taniec,ind
+88,"taniec, bieganie, rolki, pilates, joga",ind
+89,Wspinaczkę,ind
+90,"bieganie, wspinaczka",ind
+91,Bieg,run
+92,bieganie,run
+93,bieganie,run
+94,,NA
+95,jazda na rowerze,ind
+96,fitnerss,ind
+97,bieganie,run
+98,"joga, basen",ind
+99,,NA
+100,"rower, rolki",ind
+101,pływanie,ind
+102,"jogging, fitness",ind
+103,bieganie,run
+104,"rower, bieganie",ind
+105,joga,ind
+106,fitness,ind
+107,,NA
+108,,NA
+109,rower,ind
+110,gry zespołowe,group
+111,jeżdżęna hulajnodzę z pracy i do pracy. Duże dystanse wymagają wysiłku ,ind
+112,Bieganie,run
+113,Capoeira,fight
+114,biegi,ind
+115,"szermierka, bieganie",fight
+116,jazda na rowerze,ind
+117,,NA
+118,taniec,ind
+119,taniec,ind
+120,Silownia,ind
+121,"ćwiczenia w domu, fitness, jazda na rowerze",ind
+122,Przechadzki filozoficzne,NA
+123,bieganie,run
+124,"Bieganie, Siłownia",run
+125,fitness,ind
+126,bieganie,run
+127,rower,ind
+128,boks,fight
+129,Bieganie/Pływanie,run
+130,jazda hulajnogą do pracy :),ind
+131,squash,ind
+132,"pływanie, rower",ind
+133,krav maga,fight
+134,"bieganie, longboard",ind
+135,biegi,run
+136,Jogging,run
+137,Bieganie,run
+138,siłownia,ind
+139,siłownia,ind
+140,Kulturystyka,ind
+141,biegi przełajowe z kanapy na fotel he he,NA
+142,Spacery,ind
+143,bieganie,run
+144,Sporty walki,fight
+145,,ind
+146,Wushu,fight
+147,jazda konna,ind
+148,Siłownia,ind
+149,piłka nożna,ind
+150,wspinaczka,ind
+151,siłownia,ind
+152,fitness,ind
+153,basen,ind
+154,"pływanie, tenis",group
+155,,NA
+156,"jazda na rowerze, aerobik",ind
+157,"Bieganie, siłownia, rugby",group
+158,Aerobik,ind
+159,"judo, taniec, fechtunek",fight
+160,szermierka historyczna,fight
+161,,NA
+162,Trening na siłowni,ind
+163,"bieganie, siatkówka, ",group
+164,"rower, rolki",ind
+165,,NA
+166,"pole dance, kalistenika",ind
+167,Bieganie,run
+168,siłownia,ind
+169,"pole dance, siłownia",ind
+170,,NA
+171,,NA
+172,,NA
+173,cwiczę w domu,ind
+174,"fitness, bieganie",run
+175,"spacery, aerobik",ind
+176,"poker, snowboard, siłownia",ind
+177,jeżdżenie na rowerze,ind
+178,"Siłownia,  Zumba",ind
+179,"crossfit, biegi",run
+180,trening indywidualny,ind
+181,fitness,ind
+182,gimnastyka,ind
+183,bieganie,run
+184,"jogging, fitness",run
+185,fitness,ind
+186,spacery,ind
+187,biegi,run
+188,aerobic,ind
+189,bieganie,run
+190,akrobatyka sportowa,ind
+191,,NA
+192,,NA
+193,Jazda konna,ind
+194,bieganie,run
+195,pływanie ,ind
+196,jogging,run
+197,"fitness, siłownia",ind
+198,łyżwiarstwo figurowe,ind
+199,,NA
+200,"plywanie, aquaaerobik, zumba, pilates, siłownia",ind
+201,bieganie,run
+202,jazda rowerem,ind
+203,fitness,ind
+204,pływanie,ind
+205,siłownia i joga,ind
+206,aerobik wodny,ind
+207,nordic walking,ind
+208,"jazda rowerem, aqua fitness",ind
+209,bieganie,run
+210,bieganie,run
+211,pływanie,ind
