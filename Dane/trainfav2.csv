@@ -210,3 +210,19 @@ id,trainfav,trainfav2
 209,bieganie,run
 210,bieganie,run
 211,pływanie,ind
+212,"joga, pilates",ind
+213,"pływanie, piłka nożna",group
+214,fitness,ind
+215,fitness,ind
+216,jazda na rowerze,ind
+217,"bieganie, pływanie",run
+218,"Bieganie, judo",fight
+219,"bieganie, kolarstwo, pływanie",run
+220,koszykówka,group
+221,Ćwiczenia siłowe,ind
+222,"zumba, joga",ind
+223,aqua-fitness,ind
+224,,NA
+225,taniec,ind
+226,"zajęcia fitness, bodyshape itd. ",ind
+227,"joga, pilates",ind
