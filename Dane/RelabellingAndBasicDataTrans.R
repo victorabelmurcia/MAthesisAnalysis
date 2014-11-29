@@ -51,6 +51,7 @@ b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ,.]*", "", b)
 b = as.numeric(b)
 D$timeWwa = b
 rm("b")
+D$district[D$district==""] = NA
 
 # recode demographics, family, dog, occupation, education
 levels(D$children) = c(NA, "no", "yes")
