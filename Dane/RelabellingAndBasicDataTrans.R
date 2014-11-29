@@ -307,6 +307,6 @@ D = D[D$age<=35, ]
 D = D[D$Wwa == "yes", ]
 
 ### Save the date
-write.csv(D, file="Dane/DataInd.csv")
+write.csv(D, file="Dane/DataInd218.csv")
 
 # This is it folks!
