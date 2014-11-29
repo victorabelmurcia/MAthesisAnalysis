@@ -157,6 +157,7 @@ D$internetuse = as.factor(b)
 levels(D$internetuse) = c("no_blog/web", "blog/web")
 rm(list=c("b", "blog"))
 
+# TV watching related variables
 # Check if factor levels ordering for tv.a1 to tv.a8 are same
 for(i in 31:37) {print(all.equal(levels(D[,30]), levels(D[,i])))}
 # Recode factor levels in tv.a1 to tv.7
@@ -175,3 +176,95 @@ D[,c(38:40,42:46)] = varSetRecode(c(38:40,42:46), D, c(NA,4,6,2,999,5,3,7,1), nu
 levels(D[,41]) = c(NA,4,2,999,5,3,7,1)
 D[,41] = as.numeric(as.character(D[,41]))
 for(i in 38:46) { D[,i][D[,i] == 999] = mean(D[,i][D[,i] != 999], na.rm=T) }
+
+# Movie watching related variables
+levels(D$moviefreq) = c(NA,"often", "sometimes", "often", rep("rarely",2))
+# Check if factor levels ordering for tv.b1. to tv.b9 are same
+for(i in 49:57) {print(all.equal(levels(D[,48]), levels(D[,i])))}
+# Recode factor levels in movie.a1 to movie.a10
+D[,48:57] = varSetRecode(48:57, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
+b = as.character(D$movie30)
+blad = grep("[0-9]{3,3}|tysi", b)
+b[blad] = NA
+b = gsub("[0-9][-/]", "", b)
+slowne = grep("[0-9]* [fF]ilm", b)
+b[slowne] = sub("[0-9]", "", b[slowne])
+b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?()-]*", "", b)
+b = as.numeric(b)
+D$movie30 = b
+rm(list=c("b", "blad", "slowne"))
+
+# Book reading related variables
+levels(D$bookfreq) = c(NA,"often", "sometimes", "often", rep("rarely", 2))
+# Check if factor levels ordering for book.a1. to book.a10 are same
+for(i in 61:69) {print(all.equal(levels(D[,60]), levels(D[,i])))}
+# Recode factor levels in book.a1 to book.a10
+D[,60:69] = varSetRecode(60:69, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
+
+# Press related variables
+levels(D$pressfreq) = c(NA, "often", "sometimes", "often", rep("rarely", 2))
+# Check if factor levels ordering for press.a1. to press.a7 are same
+for(i in 73:78) {print(all.equal(levels(D[,72]), levels(D[,i])))}
+# Recode  factor levels in press.a1 to press.a7
+D[,72:78] = varSetRecode(72:78, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
+# Check if factor levels ordering for press.b1. to press.b10 are same
+for(i in 80:88) {print(all.equal(levels(D[,79]), levels(D[,i])))}
+# Recode factor levels in press.b1 to press.b10
+# value of 999 is used for imputation
+D[,79:88] = varSetRecode(79:88, D, c(NA,4,6,2,999,5,3,7,1), numeric=TRUE)
+for(i in 79:88) D[,i][D[,i] == 999] = mean(D[,i][D[,i] != 999], na.rm=TRUE)
+
+# Music preferences
+levels(D$musicfreq) = c(NA,"everyday", rep("not_everyday", 4))
+# Check if factor levels ordering for music.a1 to music.a14 are same
+for(i in 91:103) {print(all.equal(levels(D[,90]), levels(D[,i])))}
+# Recode factor levels in music.a1 to music.a14
+D[,90:103] = varSetRecode(90:103, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
+
+# Various cultural activities
+levels(D$theater) = c(NA, "regularly", "rarely", rep("regularly",2), rep("rarely", 2))
+levels(D$opera) = c(NA, "regularly", "never", rep("regularly", 2), rep("rarely", 2))
+levels(D$cinema) = c(NA, "sometimes", "rarely", rep("regularly",2), rep("rarely", 2))
+levels(D$art) = c(NA, "sometimes", "rarely", rep("regularly",2), rep("rarely", 2))
+levels(D$livemusic) = c(NA,"sometimes", "rarely", rep("regularly",2), rep("rarely",2))
+levels(D$club) = c(NA,"sometimes", "never", rep("regularly",2), rep("rarely",2))
+levels(D$sportshow) = c(NA,"regularly", "never", rep("regularly",2), rep("rarely",2))
+
+# Sport activities
+levels(D$trainfreq) = c(NA, "regularly", "sometimes", "regularly", "sometimes", "never")
+# Recode respondents' favourite sport activity
+write.csv(D[,c(1,114)], file="Dane/trainfav.csv")
+# Recode and group by hand
+trainfav2 = read.csv("Dane/trainfav2.csv")
+D = arrange(D, id)
+trainfav2 = arrange(trainfav2, id)
+D$trainfav = trainfav2$trainfav2
+levels(D$trainfav)[1:2] = rep("rival",2)
+
+# Amount of books, cd's and works of art in possession
+b = as.character(D$bookquant)
+b = gsub("[0-9]*-", "", b)
+b = gsub("tysi", "1500", b)
+b = gsub("set", "150", b)
+b = gsub("dziesi", "50", b)
+b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
+b = as.numeric(b)
+b = cut(b, c(-1,99,999,Inf), labels=c("tens", "hundreds", "thousands"))
+
+b = as.character(D$cdquant)
+b = gsub("[0-9]*-", "", b)
+b = gsub("set", "150", b)
+b = gsub("dziesi", "50", b)
+b = gsub("na[śs]ci", "15", b)
+b = gsub("-", "0", b)
+b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
+b = as.numeric(b)
+b = cut(b, c(-1,19,99,Inf), labels=c("few", "tens", "hundreds"))
+
+b = as.character(D$artquant)
+b = gsub("[0-9]*-", "", b)
+b = gsub("kilkana[śs]", "15", b)
+b = gsub("kilka", "5", b)
+b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
+b = as.numeric(b)
+b = cut(b, c(-1,0,10,Inf), labels=c("zero", "few", "tens+"))
