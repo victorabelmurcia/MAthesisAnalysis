@@ -5,7 +5,7 @@ id,eduprog,eduprog2
 4,położnictwo,med/bio
 5,Finanse i rachunkowość,law/biz/menag
 6,MISMaP ,STEM
-7,dziennikarstwo i komunikacja społeczna; filologia skandynawska,human/lang
+7,dziennikarstwo i komunikacja społeczna  filologia skandynawska,human/lang
 8,"europeistyka, dziennikarstwo",human/lang
 9,filologia,human/lang
 10,Finanse i rachunkowość,law/biz/menag
@@ -16,10 +16,10 @@ id,eduprog,eduprog2
 15,lingwistyka stosowana,human/lang
 16,finanse i rachunkowość,law/biz/menag
 17,"Filozofia, Socjologia, Europeistyka, Fotografia",human/lang
-18,Architektura Wnętrz,art
+18,Architektura Wnętrz,art/design
 19,"geografia, psychologia",soc/beh
 20,,NA
-21,Edukacja Artystyczna,art
+21,Edukacja Artystyczna,art/design
 22,,NA
 23,lekarski,med/bio
 24,psychologia,soc/beh
@@ -55,7 +55,7 @@ id,eduprog,eduprog2
 54,logopedia,soc/beh
 55,Psychologia,soc/beh
 56,psychologia,soc/beh
-57,AWF warszawa Turystyka i Rekreacja; Psychologia na UW,leisure
+57,AWF warszawa Turystyka i Rekreacja  Psychologia na UW,leisure
 58,"rolnictwo, turystyka i rekreacja",leisure
 59,,NA
 60,Turystyka i Rekreacja,leisure
@@ -83,7 +83,7 @@ id,eduprog,eduprog2
 82,Psychologia,soc/beh
 83,Ekonomia,law/biz/menag
 84,Psychologia,soc/beh
-85,anglistyka; psychologia,human/lang
+85,anglistyka  psychologia,human/lang
 86,,NA
 87,psychologia,soc/beh
 88,filologia romańska,human/lang
@@ -94,7 +94,7 @@ id,eduprog,eduprog2
 93,psychologia,soc/beh
 94,socjologia,soc/beh
 95,slawistyka,human/lang
-96,artystyczne,art
+96,artystyczne,art/design
 97,prawo,law/biz/menag
 98,"europeistyka, psychologia",soc/beh
 99,,NA
@@ -121,7 +121,7 @@ id,eduprog,eduprog2
 120,Politologia,soc/beh
 121,tłumaczenie specjalistyczne,human/lang
 122,Chemia,STEM
-123,malarstwo,art
+123,malarstwo,art/design
 124,Informatyka,STEM
 125,filologia polska,human/lang
 126,Prawo i Administracja,law/biz/menag
@@ -177,3 +177,52 @@ id,eduprog,eduprog2
 176,ekonomia,law/biz/menag
 177,ekonomia,law/biz/menag
 178,Zarzádzanie,law/biz/menag
+179,architektura krajobrazu,art/design
+180,Automatyka i Robotyka,STEM
+181,"PW, Inżynieria Środowska",STEM
+182,Energetyka -st. inzynierskie,STEM
+183,Biologia,med/bio
+184,ekonomia,law/biz/menag
+185,gospodarka przestrzenna,soc/beh
+186,dietetyka,med/bio
+187,socjoloie i dziennikarstwo,soc/beh
+188,,NA
+189,technologie energii odnawialnej,STEM
+190,Ekonomia,law/biz/menag
+191,technologia żywnosci ,med/bio
+192,filologia polska,human/lang
+193,Prawo,law/biz/menag
+194,Lingwistyka stosowana,human/lang
+195,matematykę ,STEM
+196,Ochrona Środowiska,STEM
+197,Artes Loiberales,human/lang
+198,Zdrowie Publiczne,med/bio
+199,Socjologia stosowana i antropologia społeczna,soc/beh
+200,"Filologia Germańska, Pedagogika specjalna",human/lang
+201,chemia,STEM
+202,bezpieczeństwo wewnętrzne,law/biz/menag
+203,biznes,law/biz/menag
+204,historia sztuki,art/design
+205,Studia nad Słowiańszczyzną Wschodnią,human/lang
+206,Filologia angielska,human/lang
+207,dziennikarstwo,human/lang
+208,Prawo,law/biz/menag
+209,Geologia,STEM
+210,technologia żywności,med/bio
+211,,NA
+212,socjologia,soc/beh
+213,Geografia,soc/beh
+214,Iberystyka,human/lang
+215,Filologia angielska,human/lang
+216,,NA
+217,kulturoznawstwo,human/lang
+218,Etnologia i Antropologia Kulturowa,human/lang
+219,,NA
+220,Filologia Polska UW,human/lang
+221,"wcześniej archeologia, obecnie polonistyka",human/lang
+222,slawistyka,human/lang
+223,studia filologiczno-kulturoznawcze,human/lang
+224,Filologia polska,human/lang
+225,Rolnictwo,med/bio
+226,filologia angielska,human/lang
+227,socjologia,soc/beh
