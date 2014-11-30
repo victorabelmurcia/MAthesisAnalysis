@@ -12,7 +12,7 @@ library(dplyr)
 source("MissImpute/ImputeHelper.R")
 source("GenCompFuncs/ComputingMisc.R")
 
-D = read.csv("Dane/LimDatInd218.csv")
+D = read.csv("Dane/LimDatInd231.csv")
 NAs = apply(D, 2, numNA)
 print(NAs) # number of NAs for each variable
 
