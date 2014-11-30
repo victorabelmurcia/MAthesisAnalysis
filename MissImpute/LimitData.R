@@ -1,10 +1,7 @@
-# This script deals with the problem of all missing values in the whole dataset at once
-# The problem is solved using a technique called MICE - Multivariate Imputation by Chained Equation (Buuren, Groothuis-Oudshoorn, 2011)
-# It is a state-of-the-art technique that allows for multiple imputations
-# and is relatively assumption-free.
-# It takes into the accoutn the nature of missing data and the measurement scale and the type of a variable.
-library(mice)
-source("MissImpute/ImputeHelper.R")
+# This script restricts the dataset only to those variables that are of any analytical 
+# utility (besides the general descriptive statistics describing the sample).
+# This file is used in "ImputeGenMICE.R" 
+# and transformed into the final analytical dataset.
 
 D = read.csv("Dane/DatIndIm218.csv")
 wD = D # working file
