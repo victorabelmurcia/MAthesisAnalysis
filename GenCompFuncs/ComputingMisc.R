@@ -16,3 +16,11 @@ domin <- function(x) {
             return(names(Tab[mode]))
       }
 }
+
+OLsToNAs <- function(x, k=5) {
+      if(!is.numeric(x)) stop("data is not numeric")
+      sigma = sd(x, na.rm=T)
+      mu = mean(x, na.rm=T)
+      x[abs(x-mu) > (k*sigma)] = NA
+      return(x)
+}
