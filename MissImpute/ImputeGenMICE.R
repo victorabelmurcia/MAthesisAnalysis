@@ -18,10 +18,11 @@ print(NAs) # number of NAs for each variable
 
 # For almost every variable there is realtively few NAs, what suggests that the missing values are due to some purely random process
 # (such as overlooking an answer field in the questionnaire)
-# Only variables related to tv stations and tv programmes have more NAs.
-# Most certainly it is due to the fact, that quite many respondents do not watch tv at all or do it very rarely.
+# Only variables related to tv stations and tv programmes (and press) have more NAs.
+# Most certainly it is due to the fact, that quite many respondents do not watch tv at all or do it very rarely (or do not read press).
 # Therefore some of them did not give any answers, while some did it any way.
 # Moreover, in many cases respondents with 0 tv wathing time gave answeres to some tv questions and to some not.
+# Moreover, some of the NAs are due to the lack of knowledge of a tv station (or a press title)
 # This is problematic, since there is no simple logical rule that could be useful in resolving this problem. Thus, it seems that best way to cope with it is to apply
 # some adavanced imputation technique such as MICE.
 # The following command shows the pattern of NAs among respondent with 0's on tvtime:
