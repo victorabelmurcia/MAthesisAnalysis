@@ -43,8 +43,10 @@ D$trainfav = factor(D$trainfav, levels(D$trainfav)[c(2,1,3,4)])
 
 ### Additionally very extreme values in book12 and movie30 are transformed into NAs
 # Get rid of extreme values in book12 and movie30
+D$movie30 = as.numeric(D$movie30)
+D$book12 = as.numeric(D$book12)
 D$movie30 = OLsToNAs(D$movie30, k=7)
-D$book12 = OLsToNAs(D$movie30, k=7)
+D$book12 = OLsToNAs(D$book12, k=7)
 
 NAs2 = apply(D, 2, numNA)
 
