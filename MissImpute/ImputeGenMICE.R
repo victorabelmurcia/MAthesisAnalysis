@@ -10,6 +10,7 @@
 library(mice)
 library(dplyr)
 source("MissImpute/ImputeHelper.R")
+source("GenCompFuncs/ComputingMisc.R")
 
 D = read.csv("Dane/LimDatInd218.csv")
 NAs = apply(D, 2, numNA)
@@ -36,7 +37,12 @@ D = arrange(D, id) # sort the dataset by id.
 # In general, MICE algorithm will be used to generate 10 parallel datasets with imputed values. This will give higher chances of getting an optimal solution and moreover will allow estimating uncertainity of every of replacement.
 
 # MICE imputation - place attachment scales
+# method of imputation - predictive mean matching (pmm)
 Att = D[,which(names(D)=="attgen1"):which(names(D)=="attmult18")]
 AttNAs = apply(Att, 2, numNA) # number of NAs in Att; there are very few of them
 AttImp = mice(Att, m=10, seed=101)
+AttImp = actualImp(AttImp$imp)
+AttImpErr = ImpOut(AttImp, Att)[[1]] # Uncertainity of imputed values
+AttImpVal = ImpOut(AttImp, Att)[[2]] # Dominant imputed values
+Att = mapImpToData(AttImpVal, Att)  # Map imputed values back to the dataset
 
