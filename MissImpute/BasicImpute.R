@@ -2,7 +2,7 @@
 # Logical imputation is for instance imputing NA for the profession in the case of a person who does not have a job etc.
 source("MissImpute/ImputeHelper.R")
 
-D = read.csv("Dane/DataInd218.csv")
+D = read.csv("Dane/DataInd231.csv")
 NAs1 = apply(D, 2, numNA)
 
 # Check NAs for eduprog
@@ -42,7 +42,7 @@ D$trainfav = factor(D$trainfav, levels(D$trainfav)[c(2,1,3,4)])
 
 NAs2 = apply(D, 2, numNA)
 
-write.csv(D, file="Dane/DatIndIm218.csv", row.names=FALSE)
+write.csv(D, file="Dane/DatIndIm231.csv", row.names=FALSE)
 rm(list=ls())
 
 # This is it folks!
