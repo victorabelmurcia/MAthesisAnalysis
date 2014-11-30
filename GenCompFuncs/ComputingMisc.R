@@ -17,6 +17,7 @@ domin <- function(x) {
       }
 }
 
+# Transforms extreme outliers into NAs
 OLsToNAs <- function(x, k=5) {
       if(!is.numeric(x)) stop("data is not numeric")
       sigma = sd(x, na.rm=T)
@@ -24,3 +25,6 @@ OLsToNAs <- function(x, k=5) {
       x[abs(x-mu) > (k*sigma)] = NA
       return(x)
 }
+
+# Computes standard error of a vector mean
+se <- function(x, na.rm=FALSE) return(sd(x, na.rm=na.rm) / sqrt(length(x)))
