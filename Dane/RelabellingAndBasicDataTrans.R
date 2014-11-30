@@ -172,11 +172,9 @@ D[,37] = as.numeric(as.character(D[,37]))
 for(i in 39:46) {print(all.equal(levels(D[,38]), levels(D[,i])))}
 # Recode factor levels in tv.b1 - tv.b3 and tv.b5 - tv.b9
 # Not recognizing a tv station is considered NA
-# 999 is used in imputation
-D[,c(38:40,42:46)] = varSetRecode(c(38:40,42:46), D, c(NA,4,6,2,999,5,3,7,1), numeric=TRUE)
-levels(D[,41]) = c(NA,4,2,999,5,3,7,1)
+D[,c(38:40,42:46)] = varSetRecode(c(38:40,42:46), D, c(NA,4,6,2,NA,5,3,7,1), numeric=TRUE)
+levels(D[,41]) = c(NA,4,2,NA,5,3,7,1)
 D[,41] = as.numeric(as.character(D[,41]))
-for(i in 38:46) { D[,i][D[,i] == 999] = mean(D[,i][D[,i] != 999], na.rm=T) }
 
 # Movie watching related variables
 levels(D$moviefreq) = c(NA,"often", "sometimes", "often", rep("rarely",2))
