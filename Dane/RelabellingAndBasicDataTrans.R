@@ -4,7 +4,7 @@
 library(dplyr)
 source("Dane/DataTransHelperFuncs.R")
 
-D <- read.csv("Dane/raw227.csv")
+D <- read.csv("Dane/raw244.csv")
 N <- read.csv("Dane/Names.csv", header=F)
 names(N) = c("id", "varname_pl", "varname_eng")
 
@@ -17,10 +17,10 @@ begin = which(names(D) == "p1")
 P = D[, c(1, begin:dim(D)[2])]
 D = D[,1:begin-1]
 rm("begin")
-write.csv(P, file="Dane/Places227.csv") # Writing place data to a separate file
+write.csv(P, file="Dane/Places244.csv") # Writing place data to a separate file
 rm("P")
 
-# sort datasets (just in case they are sorted by id by default)
+# sort the dataset (just in case they are sorted by id by default)
 D = arrange(D, id)
 
 #################
@@ -52,6 +52,7 @@ b = as.numeric(b)
 D$timeWwa = b
 rm("b")
 D$district[D$district==""] = NA
+levels(D$district)[1]= NA
 
 # recode demographics, family, dog, occupation, education
 levels(D$children) = c(NA, "no", "yes")
@@ -73,8 +74,9 @@ eduprog = arrange(eduprog, id)
 D$eduprog = eduprog$eduprog2
 rm("eduprog")
 # combine art and human/lang; combine med/bio with STEM (otherwisise too little classes)
-# leisure is still very small, but it seems it can't be added anywhere in any reasonable way
+# leisure is also very small and eventually I decided to add it to law/biz/menag, although it does not seem to be a very good thing to do...
 levels(D$eduprog)[c(1,5,7)] = c("human/lang", "STEM/med", "STEM/med")
+levels(D$eduprog)[3] = "law/biz/menag"
 
 # Recode occupation
 write.csv(D[,c(1,15)], file="Dane/occupation.csv")
@@ -114,7 +116,7 @@ D$income = as.numeric(D$income.f) - 1
 levels(D$cars) = c(NA, rep("1car+", 2), "no_car", "1car+")
 D$cars = factor(D$cars, levels(D$cars)[c(2,1)])
 # very small classes in hometype, so I combine everything except for the apartment into one category called "other"
-levels(D$hometype) = c(NA, rep("other", 4), "apartment", "other")
+levels(D$hometype) = c(NA, rep("other", 4), "apartment", "other", "other")
 b = as.character(D$homestatus)
 rodz = grep("[rR]odzi[nc]|partne|[tT]eś|[żŻ]on|[mM][ąę]ż|[dD]iad|[bB]ab|[mM]am[ay]", b)
 wlasn = grep("właś|w[lł]asn", b)
@@ -163,10 +165,7 @@ rm(list=c("b", "blog"))
 for(i in 31:37) {print(all.equal(levels(D[,30]), levels(D[,i])))}
 # Recode factor levels in tv.a1 to tv.7
 # I use on of the functions from the DataTransHelperFuncs.R
-D[,30:36] = varSetRecode(30:36, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
-# tv.a8 is recoded separately as it got different factor ordering by default
-levels(D[,37]) = c(NA,4,6,5,3,7,1)
-D[,37] = as.numeric(as.character(D[,37]))
+D[,30:37] = varSetRecode(30:36, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
 
 # Check if factor levels ordering for tv.b1. to tv.b9 are same
 for(i in 39:46) {print(all.equal(levels(D[,38]), levels(D[,i])))}
@@ -215,9 +214,7 @@ D[,72:78] = varSetRecode(72:78, D, c(NA,4,6,2,5,3,7,1), numeric=TRUE)
 # Check if factor levels ordering for press.b1. to press.b10 are same
 for(i in 80:88) {print(all.equal(levels(D[,79]), levels(D[,i])))}
 # Recode factor levels in press.b1 to press.b10
-# value of 999 is used for imputation
-D[,79:88] = varSetRecode(79:88, D, c(NA,4,6,2,999,5,3,7,1), numeric=TRUE)
-for(i in 79:88) D[,i][D[,i] == 999] = mean(D[,i][D[,i] != 999], na.rm=TRUE)
+D[,79:88] = varSetRecode(79:88, D, c(NA,4,6,2,NA,5,3,7,1), numeric=TRUE)
 
 # Music preferences
 levels(D$musicfreq) = c(NA,"everyday", rep("not_everyday", 4))
@@ -252,6 +249,7 @@ b = gsub("[0-9]*-", "", b)
 b = gsub("tysi", "1500", b)
 b = gsub("set", "150", b)
 b = gsub("dziesi", "50", b)
+b = gsub("[aA-zZ][0-9]*|[0-9]*[aA-zZ]", "", b)
 b = gsub("[aA-zZ ąćęłńóśźżĄĆĘŁŃÓŚŹŻ+?(),.><]*", "", b)
 b = as.numeric(b)
 b = cut(b, c(-1,99,999,Inf), labels=c("tens", "hundreds", "thousands"))
@@ -312,11 +310,11 @@ for(i in 172:188) {print(all.equal(levels(D[,171]), levels(D[,i])))}
 D[,171:188] = varSetRecode(171:188, D, c(NA,2,4,3,1,5))
 
 ### Get rid of respondents that are either too old or do not live in Warsaw
-D = D[D$age<=35 | is.na(D$age), ]
+D = D[D$age<=32 | is.na(D$age) | D$age<18, ]
 D = D[D$Wwa == "yes", ]
 
-### Save the date
-write.csv(D, file="Dane/DataInd218.csv", row.names=FALSE)
+### Save the dataset
+write.csv(D, file="Dane/DataInd231.csv", row.names=FALSE)
 rm(list=ls())
 
 # This is it folks!
