@@ -1,6 +1,7 @@
 # This script performs basic logical imputation
 # Logical imputation is for instance imputing NA for the profession in the case of a person who does not have a job etc.
 source("MissImpute/ImputeHelper.R")
+source("GenCompFuncs/ComputingMisc.R")
 
 D = read.csv("Dane/DataInd231.csv")
 NAs1 = apply(D, 2, numNA)
@@ -39,6 +40,11 @@ D$trainfav = as.character(D$trainfav)
 D[D$trainfreq=="never" & is.na(D$trainfav), "trainfav"] = "no_sport"
 D$trainfav = as.factor(D$trainfav)
 D$trainfav = factor(D$trainfav, levels(D$trainfav)[c(2,1,3,4)])
+
+### Additionally very extreme values in book12 and movie30 are transformed into NAs
+# Get rid of extreme values in book12 and movie30
+D$movie30 = OLsToNAs(D$movie30, k=7)
+D$book12 = OLsToNAs(D$movie30, k=7)
 
 NAs2 = apply(D, 2, numNA)
 
