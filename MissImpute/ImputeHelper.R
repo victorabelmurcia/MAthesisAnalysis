@@ -1,3 +1,5 @@
+library("mice")
+
 # Helper function that computes sum or fraction of NAs for every variable in a dataset
 numNA <- function(x, frac=FALSE) { 
       if(frac) return(mean(is.na(x)))
@@ -82,3 +84,17 @@ mapImpToData <- function(impDF, D) {
       }
       return(D)
 }
+
+# Computes mean distortion resulting from MICE imputation
+meanImpRMSE <- function(L, D) {
+      m = L$m
+      Mat = matrix(ncol=dim(D)[2], nrow=m)
+      colnames(Mat) = names(D)
+      mu = apply(D, 2, mean, na.rm=TRUE)
+      for(i in 1:m) {
+            dat = complete(L, i)
+            Mat[i, ] = sqrt((apply(dat, 2, mean) - mu)^2)
+      }
+      return(apply(Mat, 2, mean))
+}
+      
