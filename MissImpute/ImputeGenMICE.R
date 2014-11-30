@@ -164,7 +164,7 @@ par(mfrow=c(1,1))
 #########################################
 # Setting up a plot
 par(mfrow=c(2,1))
-barplot(CultImpErr[19:29,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
+barplot(CultImpErr[19:26,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
 # Here the RMSE / SE plot begins
 plot(CultSE[19:29], type="l", ylim=c(0,.3), xlim=c(0,length(CultSE[19:29])), ylab="SE / RMSE", xlab="", xaxt="n", lwd=2, lty=1)
 axis(1, at=1:length(CultSE[19:29]), labels=names(CultSE[19:29]), las=3)
@@ -179,7 +179,7 @@ par(mfrow=c(1,1))
 #########################################
 # Setting up a plot
 par(mfrow=c(2,1))
-barplot(CultImpErr[30:40,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
+barplot(CultImpErr[30:37,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
 # Here the RMSE / SE plot begins
 plot(CultSE[30:40], type="l", ylim=c(0,.3), xlim=c(0,length(CultSE[30:40])), ylab="SE / RMSE", xlab="", xaxt="n", lwd=2, lty=1)
 axis(1, at=1:length(CultSE[30:40]), labels=names(CultSE[30:40]), las=3)
@@ -194,32 +194,70 @@ par(mfrow=c(1,1))
 #########################################
 # Setting up a plot
 par(mfrow=c(2,1))
-barplot(CultImpErr[31:57,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
+barplot(CultImpErr[41:54,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
 # Here the RMSE / SE plot begins
 plot(CultSE[41:57], type="l", ylim=c(0,.3), xlim=c(0,length(CultSE[41:57])), ylab="SE / RMSE", xlab="", xaxt="n", lwd=2, lty=1)
 axis(1, at=1:length(CultSE[41:57]), labels=names(CultSE[41:57]), las=3)
 lines(CultRMSE[41:57], lwd=2, lty=2)
-text(7,.27, "Preferencje - prasa", cex=.7)
+text(9,.27, "Preferencje - prasa", cex=.7)
 legend("topleft", c("SE", "RMSE"), lty=c(1,2), cex=.7)
 # Here the plot ends
 par(mfrow=c(1,1))
 ##################################################
 # Plot RMSE against SE and entropy bars
-# - Press preferences
+# - music preferences
 #########################################
 # Setting up a plot
 par(mfrow=c(2,1))
-barplot(CultImpErr[31:57,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
+barplot(CultImpErr[58:68,3], ylim=c(0,1), col="gray15", las=3, ylab="Entropia względna")
 # Here the RMSE / SE plot begins
-plot(CultSE[41:57], type="l", ylim=c(0,.3), xlim=c(0,length(CultSE[41:57])), ylab="SE / RMSE", xlab="", xaxt="n", lwd=2, lty=1)
-axis(1, at=1:length(CultSE[41:57]), labels=names(CultSE[41:57]), las=3)
-lines(CultRMSE[41:57], lwd=2, lty=2)
-text(7,.27, "Preferencje - prasa", cex=.7)
+plot(CultSE[58:71], type="l", ylim=c(0,.3), xlim=c(0,length(CultSE[58:71])), ylab="SE / RMSE", xlab="", xaxt="n", lwd=2, lty=1)
+axis(1, at=1:length(CultSE[58:71]), labels=names(CultSE[58:71]), las=3)
+lines(CultRMSE[58:71], lwd=2, lty=2)
+text(7,.27, "Preferencje -muzyka", cex=.7)
 legend("topleft", c("SE", "RMSE"), lty=c(1,2), cex=.7)
 # Here the plot ends
 par(mfrow=c(1,1))
 ##################################################
 
 
+# MICE imputation for demographics, socio-economics and other variables
+# (mostly categorical)
+# Method: various (depending on a variable type)
+vars = c(2:19, 38, 50, 62, 80,95:108, 180:182)
+Gen = D[, vars]
+GenNAs = apply(Gen, 2, numNA) # number of NAs in Cult; There is not many
+N = names(GenNAs[GenNAs != 0])    # variables with missing data
+Gen = D[,N]
+methods = c("lda", "pmm", "polr", "lda", "logreg", "pmm", "pmm", "logreg", "polr", "polr", "logreg", "polr", "polr", "polr", "polr", "polr", "pmm", "pmm", "lda", "polr", "polr", "polr", "pmm", "lda", "polr")
+GenImp = mice(Gen, m=20, seed=1050, method=methods)
+GenImpL = actualImp(GenImp$imp)
+GenImpErr = ImpOut(GenImpL, Gen)[[1]] # Uncertainity of imputed values
+GenImpVal = ImpOut(GenImpL, Gen)[[2]] # Dominant imputed values
+Gen = mapImpToData(GenImpVal, Gen)  # Map imputed values back to the dataset
+##################################
+# plot of entropy of imputations #
+##################################
+barplot(GenImpErr[,3], col="gray15", ylim=c(0,1), las=3, cex.axis=.7, cex=.7)
+
+# combine all the datasets back together
+wD = D
+indGen = which(names(wD) %in% names(Gen))
+indCult = which(names(wD) %in% names(Cult))
+indAct = which(names(wD) %in% names(Act))
+indSC = which(names(wD) %in% names(SC))
+indAtt = which(names(wD) %in% names(Att))
+wD[, indGen] = Gen
+wD[, indCult] = Cult
+wD[, indAct] = Act
+wD[, indSC] = SC
+wD[, indAtt] = Att
+
 # Save the workspace (in order not to repeat the computationally heavy analysis)
 save.image("MissImpute/MICEimput.RData")
+
+# Save the dataset
+write.csv(wD, file="Dane/FullDatInd231.csv", row.names=FALSE)
+rm(list=ls())
+
+# This is it folks!
