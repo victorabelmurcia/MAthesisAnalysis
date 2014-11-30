@@ -3,7 +3,7 @@
 # This file is used in "ImputeGenMICE.R" 
 # and transformed into the final analytical dataset.
 
-D = read.csv("Dane/DatIndIm218.csv")
+D = read.csv("Dane/DatIndIm231.csv")
 wD = D # working file
 
 # First stage:
@@ -24,7 +24,7 @@ wD = wD[, -which(names(wD)=="gender")] # because gender will not be analyzed exc
 wD = wD[, -which(names(wD)=="income.f")] # this factor variable will not be useful
 
 ### Now the dataset is a bit closer to be prepared for the analysis
-write.csv(wD, file="Dane/LimDatInd218.csv", row.names=FALSE)
+write.csv(wD, file="Dane/LimDatInd231.csv", row.names=FALSE)
 rm(list=ls())
 
 # This is it folks!
