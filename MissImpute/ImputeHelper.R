@@ -86,13 +86,18 @@ mapImpToData <- function(impDF, D) {
 }
 
 # Computes mean distortion resulting from MICE imputation
-meanImpRMSE <- function(L, D) {
+meanImpRMSE <- function(L, D, factor_imp=FALSE) {
       m = L$m
       Mat = matrix(ncol=dim(D)[2], nrow=m)
       colnames(Mat) = names(D)
       mu = apply(D, 2, mean, na.rm=TRUE)
       for(i in 1:m) {
             dat = complete(L, i)
+            if(factor_imp) {
+                  for(j in 1:dim(dat)[2]) {
+                        dat[,j] = as.numeric(as.character(dat[,j]))
+                  }
+            }
             Mat[i, ] = sqrt((apply(dat, 2, mean) - mu)^2)
       }
       return(apply(Mat, 2, mean))
